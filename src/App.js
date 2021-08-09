@@ -16,12 +16,12 @@ function App() {
 
   //useEffect/cada vez que cambie el estado de citas se ejecutara este useEffect
   useEffect(() => {
+    let citasIniciales = JSON.parse(localStorage.getItem('citas'));
     if (citasIniciales) {
       localStorage.setItem("citas", JSON.stringify(citas));
     } else {
       localStorage.setItem("citas", JSON.stringify([]));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }   
   }, [citas]);
 
   //Funcion que agrega las citas
