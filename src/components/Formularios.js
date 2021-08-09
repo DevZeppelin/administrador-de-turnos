@@ -5,11 +5,11 @@ const Formulario = ({crearCita}) => {
 
     //Crear State de Citas
     const [cita, actualizarCita] = useState({
-        mascota: '',
-        propietario: '',
+        paciente: '',
+        responsable: '',
         fecha: '',
         hora: '',
-        sintomas: ''
+        detalles: ''
     })
 
     //State para manejar el error en la validacion
@@ -28,7 +28,7 @@ const Formulario = ({crearCita}) => {
     }
 
     //Extraer valores
-    const {mascota, propietario, fecha, hora, sintomas} = cita
+    const {paciente, responsable, fecha, hora, detalles} = cita
 
     //Cuando el usuario presiona agregar cita
     const submitCita = e => {
@@ -38,7 +38,7 @@ const Formulario = ({crearCita}) => {
       //trim elimina los espacios en blanco al principio o al final.
       //tengo que crear un nuevo state para manejar el error
       //el actualziar cita utilizaba llaves ({}) porque es un objeto. el state de error empieza como un booleano por eso lleva solo(). Si fuera un array cambia la sintaxis a ([])
-      if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === ''){
+      if(paciente.trim() === '' || responsable.trim() === '' || fecha.trim() === '' || hora.trim() === '' || detalles.trim() === ''){
         actualizarError(true)
         return
       }
@@ -55,11 +55,11 @@ const Formulario = ({crearCita}) => {
       //Reiniciar el Form
       //Una vez se agrego la cita al state ppal, lo reiniciamos porque al colocarle los values, y como tenemos asignadas las variables a los values detecta q son string vacios y react recarga esa parte del componente reiniciando el formulario
       actualizarCita ({
-        mascota: '',
-        propietario: '',
+        paciente: '',
+        responsable: '',
         fecha: '',
         hora: '',
-        sintomas: ''
+        detalles: ''
       })
 
     }
@@ -73,24 +73,24 @@ const Formulario = ({crearCita}) => {
       <form
         onSubmit={submitCita}
       >
-        <label>Nombre Mascota</label>
+        <label>Nombre paciente</label>
         <input
           type="text"
-          name="mascota"
+          name="paciente"
           className="u-full-width"
-          placeholder="Nombre Mascota"
+          placeholder="Nombre paciente"
           onChange={actualizarState}
-          value={mascota}
+          value={paciente}
         />
 
-        <label>Nombre Dueño</label>
+        <label>Nombre Responsable</label>
         <input
           type="text"
-          name="propietario"
+          name="responsable"
           className="u-full-width"
-          placeholder="Nombre Dueño de Mascota"
+          placeholder="Nombre Responsable de paciente"
           onChange={actualizarState}
-          value={propietario}
+          value={responsable}
         />
 
         <label>Fecha</label>
@@ -107,12 +107,12 @@ const Formulario = ({crearCita}) => {
           value={hora}      
         />
 
-<label>Síntomas</label>
+<label>Descripción/detalles</label>
         <textarea
             className="u-full-width"
-            name="sintomas"
+            name="detalles"
             onChange={actualizarState}
-            value={sintomas}
+            value={detalles}
         ></textarea>
 
         <button
