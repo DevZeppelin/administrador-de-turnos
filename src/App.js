@@ -46,7 +46,7 @@ function App() {
 
   return (
     <Fragment>
-      <h1>Adminsitrador de pacientes</h1>
+      <h1>Adminsitrador de Turnos</h1>
       <div className="container">
         <div className="row">
           <div className="one-half column">
