@@ -46,7 +46,7 @@ function App() {
 
   return (
     <Fragment>
-      <h1>Adminsitrador de Turnos</h1>
+      <img src="/logo.png" alt="logo turn on administrador de turnos barberia consultorio" className="image" />
       <div className="container">
         <div className="row">
           <div className="one-half column">

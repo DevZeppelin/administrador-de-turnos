@@ -1,6 +1,6 @@
 _App disponible en : https://administrador-de-turnos.vercel.app/_
 
-# Administrador de turnos
+# Turn On!
 
 _Este proyecto utiliza:_
 _localStorage para almacenar los datos de manera local_

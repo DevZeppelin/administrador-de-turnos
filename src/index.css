@@ -1,9 +1,9 @@
 :root {
-  --primary: #4599b2;
-  --secundary: #1a5e6e;
-  --third: #1f5269;
+  --primary: #e5b198;
+  --secundary: #f70a38;
+  --third: #140e12;
   --text: rgb(11, 21, 24);
-  --background: rgb(194, 194, 194);
+  --background: #ffe4df
 }
 
 html {
@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto Mono', monospace;
   background-image: linear-gradient(
     -225deg,
     var(--primary) 0%,
@@ -30,12 +30,13 @@ h2 {
 
   text-transform: uppercase;
 
-  font-family: "Staatliches", cursive;
+  font-family: 'Roboto Mono', monospace;
   letter-spacing: 1px;
 }
 
 h2 {
   font-size: 3rem;
+  font-weight: bolder;
 }
 
 .lista-citas .media {
@@ -84,6 +85,7 @@ input[type="time"] {
   background: var(--background);
   border-bottom: 1px solid #e1e1e1;
   color: black;
+  border: var(--third) solid 3px;
 }
 
 .cita p {
@@ -101,6 +103,20 @@ input[type="time"] {
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
+.button {
+  background: #140e12;
+  background-color: var(--third);
+  color: var(--secundary);
+  border: var(--secundary) solid 3px;
+  font-size: large;
+  height: 50px;
+}
+
+.button:hover{
+  background-color: var(--background);
+  color: var(--third);
+  border: var(--third) solid 3px;
+}
 .button.eliminar,
 .button.eliminar:hover {
   background-color: var(--text);
@@ -109,11 +125,25 @@ input[type="time"] {
 }
 
 .alerta-error {
-  background-color: var(--background);
-  color: var(--secundary);
+  background-color: var(--secundary);
+  color: var(--third);
+  border: var(--third) 3px solid;
   padding: 1rem;
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
-  font-family: "Staatliches", cursive;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.image {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+@media (max-width: 360px){
+  .image {
+    width: 80%;
+  }
 }
